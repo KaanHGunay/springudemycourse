@@ -1,4 +1,4 @@
-package com.khg.learningspring;
+package com.khg.learningspring.basic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
