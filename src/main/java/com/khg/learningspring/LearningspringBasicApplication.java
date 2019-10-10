@@ -1,19 +1,21 @@
 package com.khg.learningspring;
 
 import com.khg.learningspring.basic.BinarySearchImpl;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
+@Configuration  // Spring Boot olmadan Spring Framework u kullanmak içinm
+@ComponentScan("com.khg.learningspring")  // Componentlerş bulması için
 public class LearningspringBasicApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext applicationContext = SpringApplication.run(LearningspringBasicApplication.class, args);
+		try(AnnotationConfigApplicationContext applicationContext =
+					new AnnotationConfigApplicationContext(LearningspringBasicApplication.class)) {
 		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
 		BinarySearchImpl binarySearch2 = applicationContext.getBean(BinarySearchImpl.class);
 		// Scope Prototype olması nedeniyle iki farklı instance oluşturulacak
-		int a = binarySearch.binarySearch(new int[] {2, 6, 5}, 4);
+		int a = binarySearch.binarySearch(new int[] {2, 6, 5}, 4);}
 	}
 
 }
