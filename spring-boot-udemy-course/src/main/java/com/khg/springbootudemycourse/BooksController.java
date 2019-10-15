@@ -3,6 +3,7 @@ package com.khg.springbootudemycourse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Arrays;
 
@@ -10,6 +11,6 @@ import java.util.Arrays;
 public class BooksController {
     @GetMapping("/books")
     public List<Book> getAllBooks() {
-        return Arrays.asList(new Book(1l, "TestBook", "TestAuthor"));
+        return Collections.singletonList(new Book(1L, "TestBook", "TestAuthor"));
     }
 }
