@@ -16,18 +16,18 @@ public class AfterAOPAspect {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @AfterReturning(
-            value = "execution(* com.khg.springaopudemy.business.*.*(..))",
+            value = "com.khg.springaopudemy.aspect.CommonJoinPointConfig.dataLayerExecution()",
             returning = "result")
     public void after(JoinPoint joinPoint, Object result) {
         logger.info("{} returned value with {}", joinPoint, result);
     }
 
-    @AfterThrowing(value = "execution(* com.khg.springaopudemy.business.*.*(..))", throwing = "exception")
+    @AfterThrowing(value = "com.khg.springaopudemy.aspect.CommonJoinPointConfig.dataLayerExecution()", throwing = "exception")
     public void afterThrowing(JoinPoint joinPoint, Object exception) {
         logger.info("{} returned value with {}", joinPoint, exception);
     }
 
-    @After(value = "execution(* com.khg.springaopudemy.business.*.*(..))")
+    @After(value = "com.khg.springaopudemy.aspect.CommonJoinPointConfig.dataLayerExecution()")
     public void afterThrowing(JoinPoint joinPoint) {
         logger.info("After execution of {}", joinPoint);
     }

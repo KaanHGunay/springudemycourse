@@ -13,7 +13,7 @@ public class MethodExecutionCalcAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Around("execution(* com.khg.springaopudemy.business.*.*(..))")
+    @Around("com.khg.springaopudemy.aspect.CommonJoinPointConfig.dataLayerExecution()")
     public void around(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
         joinPoint.proceed();

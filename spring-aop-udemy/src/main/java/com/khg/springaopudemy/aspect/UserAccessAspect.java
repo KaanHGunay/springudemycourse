@@ -13,7 +13,7 @@ public class UserAccessAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Before("execution(* com.khg.springaopudemy.business.*.*(..))")  // Classta herhangi bir dönüş tipine sahip tüm classları yakala
+    @Before("com.khg.springaopudemy.aspect.CommonJoinPointConfig.dataLayerExecution()")  // Classta herhangi bir dönüş tipine sahip tüm classları yakala
     public void before(JoinPoint joinPoint) {
         logger.info("Intercepted method called. -> {}", joinPoint);
     }
