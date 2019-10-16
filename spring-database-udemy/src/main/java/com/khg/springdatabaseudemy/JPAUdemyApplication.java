@@ -30,5 +30,6 @@ public class JPAUdemyApplication implements CommandLineRunner {
 		personJpaRepo.deleteById(10001);
 		logger.info("1004 id person insert -> {}", personJpaRepo.insertPerson(new Person(10004, "Kaan", "Ankara", new Date())));
 		logger.info("Update 1001 id person -> {}", personJpaRepo.updatePerson(new Person(10002, "Test", "World", new Date())));
+		logger.info("All users -> {}", personJpaRepo.findAll());
 	}
 }
