@@ -23,5 +23,7 @@ public class SpringDatabaseUdemyApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info("All users -> {}", personJdbcDao.findAll());
+		logger.info("10001 id person -> {}", personJdbcDao.findById(10001));
+		logger.info("10001 id person deleted -> {}", personJdbcDao.deleteById(10001));
 	}
 }
