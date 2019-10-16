@@ -1,3 +1,4 @@
+/*  JPA ile otomatik oluşturulması nedeiyle yorum satırı halie geltirilmiştir */
 create table person
 (
    id integer not null,
@@ -6,3 +7,4 @@ create table person
    birth_date timestamp,
    primary key(id)
 );
+/**/

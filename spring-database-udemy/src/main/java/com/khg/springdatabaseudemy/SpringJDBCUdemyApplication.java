@@ -11,8 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Date;
 
-@SpringBootApplication
-public class SpringDatabaseUdemyApplication implements CommandLineRunner {
+// @SpringBootApplication
+public class SpringJDBCUdemyApplication implements CommandLineRunner {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -20,7 +20,7 @@ public class SpringDatabaseUdemyApplication implements CommandLineRunner {
 	private PersonJdbcDao personJdbcDao;
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringDatabaseUdemyApplication.class, args);
+		SpringApplication.run(SpringJDBCUdemyApplication.class, args);
 	}
 
 	@Override
