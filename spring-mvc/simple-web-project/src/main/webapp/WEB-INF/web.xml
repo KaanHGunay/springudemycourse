@@ -23,7 +23,7 @@
 	
 	    <servlet-mapping>
 	        <servlet-name>dispatcher</servlet-name>
-	        <url-pattern>/s/*</url-pattern>
+	        <url-pattern>/spring-mvc/*</url-pattern>
 	    </servlet-mapping>
 
 </web-app>
