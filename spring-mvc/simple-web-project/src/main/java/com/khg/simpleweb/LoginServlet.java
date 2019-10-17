@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(req, res);
+		String name = req.getParameter("name");
+		req.setAttribute("name", name);
+		req.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(req, res);
 	}
 }
