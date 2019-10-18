@@ -13,6 +13,11 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 	
+	@RequestMapping(value = "/login")
+	public String sayHello() {
+		return "login";			
+	}
+	/*
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showLoginPage() {
 		return "login";
@@ -29,5 +34,5 @@ public class LoginController {
 
 		model.put("name", name);
 		return "welcome";
-	}
+	}*/
 }
