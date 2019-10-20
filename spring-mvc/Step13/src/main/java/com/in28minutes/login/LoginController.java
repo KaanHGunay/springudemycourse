@@ -1,4 +1,4 @@
-package com.khg.simpleweb.springmvc;
+package com.in28minutes.login;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,15 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LoginController {
-	
+
 	@Autowired
 	private LoginService loginService;
-	
-	@RequestMapping(value = "/login")
-	public String sayHello() {
-		return "login";			
-	}
-	/*
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showLoginPage() {
 		return "login";
@@ -34,5 +29,5 @@ public class LoginController {
 
 		model.put("name", name);
 		return "welcome";
-	}*/
+	}
 }
