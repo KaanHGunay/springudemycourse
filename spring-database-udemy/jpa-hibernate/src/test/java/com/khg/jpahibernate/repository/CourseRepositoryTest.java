@@ -24,7 +24,7 @@ public class CourseRepositoryTest {
 
     @Test
     public void findById_Basic() {
-        Course course = courseRepository.findById(1000L);
+        Course course = courseRepository.findById(1001L);
         assertEquals("Test", course.getName());
     }
 
@@ -33,5 +33,21 @@ public class CourseRepositoryTest {
     public void deleteById_Basic() {
         courseRepository.deleteById(1001L);
         assertNull(courseRepository.findById(1001L));
+    }
+
+    @Test
+    @DirtiesContext
+    public void save_Basic() {
+        // Get a courser
+        Course course = courseRepository.findById(1001L);
+        assertEquals("Test", course.getName());
+        // Update details
+        course.setName("Test2");
+
+        courseRepository.save(course);
+
+        // Check value
+        Course course1 = courseRepository.findById(1001L);
+        assertEquals("Test2", course1.getName());
     }
 }
