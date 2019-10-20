@@ -22,6 +22,8 @@ public class JpaHibernateApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		logger.info("Courses -> {}", courseRepository.findById(1L));
+        logger.info("Courses -> {}", courseRepository.findById(1L));
+        courseRepository.deleteById(1L);
+        logger.info("Courses -> {}", courseRepository.findById(1L));
 	}
 }
