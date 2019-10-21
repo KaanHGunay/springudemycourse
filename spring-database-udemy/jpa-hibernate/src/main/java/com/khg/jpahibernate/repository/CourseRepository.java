@@ -43,6 +43,7 @@ public class CourseRepository {
         entityManager.flush();  // Transaction bitmeden veri tabanına yaz
 
         course.setName("Test Data - Updated");
+        entityManager.refresh(course);  // Nesneyi veri tabanında ki haline getirmek için kullanılır
         entityManager.flush();
 
         Course course2 = new Course("Test Data 2");
