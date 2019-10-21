@@ -42,8 +42,7 @@ public class CourseRepository {
         entityManager.persist(course);
 
         Course course1 = findById(1001L);
-        course.setName("Changed Test Data");
-        entityManager.merge(course1);
+        course1.setName("Changed Test Data");
     }
 
     public void playWithEntityManager_old() {

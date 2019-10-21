@@ -17,10 +17,10 @@ public class Course {
     private String name;
 
     @UpdateTimestamp
-    private LocalDateTime lastUpdatedTime;  // Java 8 den önce java.util.time kullanılıyor.
+    private LocalDateTime lastUpdatedDate;  // Java 8 den önce java.util.time kullanılıyor.
 
     @CreationTimestamp
-    private LocalDateTime createdTime;
+    private LocalDateTime createdDate;
 
     public Course() {}
 
