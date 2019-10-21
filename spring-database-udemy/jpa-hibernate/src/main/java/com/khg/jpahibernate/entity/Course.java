@@ -1,6 +1,10 @@
 package com.khg.jpahibernate.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "course")
@@ -11,6 +15,12 @@ public class Course {
 
     @Column(name = "name", nullable = false)
     private String name;
+
+    @UpdateTimestamp
+    private LocalDateTime lastUpdatedTime;  // Java 8 den önce java.util.time kullanılıyor.
+
+    @CreationTimestamp
+    private LocalDateTime createdTime;
 
     public Course() {}
 

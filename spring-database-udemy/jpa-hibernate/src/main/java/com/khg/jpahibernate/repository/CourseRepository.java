@@ -40,6 +40,15 @@ public class CourseRepository {
     public void playWithEntityManager() {
         Course course = new Course("Test Data");
         entityManager.persist(course);
+
+        Course course1 = findById(1001L);
+        course.setName("Changed Test Data");
+        entityManager.merge(course1);
+    }
+
+    public void playWithEntityManager_old() {
+        Course course = new Course("Test Data");
+        entityManager.persist(course);
         entityManager.flush();  // Transaction bitmeden veri tabanına yaz
 
         course.setName("Test Data - Updated");

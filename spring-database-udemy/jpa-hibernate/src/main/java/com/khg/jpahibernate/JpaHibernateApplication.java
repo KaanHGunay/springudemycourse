@@ -23,6 +23,11 @@ public class JpaHibernateApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-        courseRepository.playWithEntityManager();
+		Course course = new Course("Test Data");
+		courseRepository.save(course);
+
+		Course course1 = courseRepository.findById(1001L);
+		course.setName("Changed Test Data");
+		courseRepository.save(course1);
 	}
 }
