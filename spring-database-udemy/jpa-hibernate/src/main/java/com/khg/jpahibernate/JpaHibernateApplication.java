@@ -1,6 +1,5 @@
 package com.khg.jpahibernate;
 
-import com.khg.jpahibernate.entity.Course;
 import com.khg.jpahibernate.repository.CourseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
