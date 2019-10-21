@@ -16,6 +16,9 @@ public class Student {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @OneToOne
+    private Passport passport;
+
     public Student() {}
 
     public Student(String name) {
