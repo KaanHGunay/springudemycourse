@@ -2,6 +2,7 @@ package com.khg.jpahibernate;
 
 import com.khg.jpahibernate.entity.Course;
 import com.khg.jpahibernate.entity.Review;
+import com.khg.jpahibernate.entity.Student;
 import com.khg.jpahibernate.repository.CourseRepository;
 import com.khg.jpahibernate.repository.StudentRepository;
 import org.slf4j.Logger;
@@ -33,12 +34,12 @@ public class JpaHibernateApplication implements CommandLineRunner {
 	@Override
 	@Transactional
 	public void run(String... args) throws Exception {
-		Course course = courseRepository.findById(1001L);
-		List<Review> reviews = new ArrayList<>();
-		Review review1 = new Review("5", "Great");
-		Review review2 = new Review("4", "Good");
-		reviews.add(review1);
-		reviews.add(review2);
-		courseRepository.addReviewsCourse(course, reviews);
+		Student student = new Student("Kaan");
+		Course course1 = new Course("Spring Boot");
+		Course course2 = new Course("Spring Boot - 2");
+		List<Course> courses = new ArrayList<>();
+		courses.add(course1);
+		courses.add(course2);
+		studentRepository.saveStudentAndCourses(student, courses);
 	}
 }

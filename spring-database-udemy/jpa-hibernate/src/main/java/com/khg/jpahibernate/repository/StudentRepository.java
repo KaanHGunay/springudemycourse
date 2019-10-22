@@ -1,5 +1,6 @@
 package com.khg.jpahibernate.repository;
 
+import com.khg.jpahibernate.entity.Course;
 import com.khg.jpahibernate.entity.Passport;
 import com.khg.jpahibernate.entity.Student;
 import org.slf4j.Logger;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 @Transactional  // Data manipulation için gerekli
@@ -44,5 +46,29 @@ public class StudentRepository {
         Student student = new Student("Mike");
         student.setPassport(passport);
         entityManager.persist(student);
+    }
+
+    public void saveStudentAndCourses(Student student, Course course) {
+        if(student.getId() == null) {
+            entityManager.persist(student);
+        }
+        if (course.getId() == null) {
+            entityManager.persist(course);
+        }
+        course.addStudent(student);
+        student.addCourse(course);
+    }
+
+    public void saveStudentAndCourses(Student student, List<Course> courses) {
+        if(student.getId() == null) {
+            entityManager.persist(student);
+        }
+        for(Course course:courses) {
+            if (course.getId() == null) {
+                entityManager.persist(course);
+            }
+            course.addStudent(student);
+            student.addCourse(course);
+        }
     }
 }
