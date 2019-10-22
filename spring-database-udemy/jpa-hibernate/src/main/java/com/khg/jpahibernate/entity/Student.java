@@ -21,7 +21,16 @@ public class Student {
     @OneToOne(fetch = FetchType.LAZY)  // Lazy Fetch yapılmak istenirse
     private Passport passport;
 
-    @ManyToMany(mappedBy = "students")
+    /**
+     * Join Table Annotation ile join tablosu düzenlenebilir - Zorunlu değil
+     * Join Column ile tablodaki owner kolonunun ismini
+     * Inverse Column ile diğer kolonun ismini belirliyoruz
+     */
+    @ManyToMany
+    @JoinTable(name = "STUDENT_COURSE",
+            joinColumns = @JoinColumn(name = "STUDENT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "COURSE_ID")
+    )
     private List<Course> courses = new ArrayList<>();
 
     public Student() {}
