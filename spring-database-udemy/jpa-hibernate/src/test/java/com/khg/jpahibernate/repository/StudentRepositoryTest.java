@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 
@@ -29,7 +30,13 @@ public class StudentRepositoryTest {
     @Autowired
     private EntityManager entityManager;
 
+    /**
+     * Eğer herhangi bir ayar yapılmazsa one to one ilişi eager fetch yapar
+     * Lazy fetch yapılması isteniyorsa Entity kısmında belirtilmeli
+     * Ayrıca kullanılan metot transactional olmalıdır.
+     */
     @Test
+    @Transactional
     public void retrieveStudentWithPassport() {
         Student student = entityManager.find(Student.class, 2001L);
         logger.info("Student -> {}", student);

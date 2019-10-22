@@ -16,7 +16,7 @@ public class Student {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)  // Lazy Fetch yapılmak istenirse
     private Passport passport;
 
     public Student() {}
