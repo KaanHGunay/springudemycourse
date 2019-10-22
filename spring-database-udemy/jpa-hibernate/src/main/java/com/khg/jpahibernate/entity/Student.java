@@ -21,7 +21,7 @@ public class Student {
     @OneToOne(fetch = FetchType.LAZY)  // Lazy Fetch yapılmak istenirse
     private Passport passport;
 
-    @ManyToMany(mappedBy = "courses")
+    @ManyToMany(mappedBy = "students")
     private List<Course> courses = new ArrayList<>();
 
     public Student() {}
