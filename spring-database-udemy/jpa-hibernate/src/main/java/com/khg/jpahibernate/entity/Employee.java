@@ -1,11 +1,14 @@
 package com.khg.jpahibernate.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+/**
+ * Inheritance strategy
+ * Def -> SINGLE_TABLE tüm alt classlar aynı tabloya kayıt olur
+ */
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "EmployeeType")  // Tip kolonuna verilecek isim belirlenebilir.
 public abstract class Employee {
     @Id
     @GeneratedValue
