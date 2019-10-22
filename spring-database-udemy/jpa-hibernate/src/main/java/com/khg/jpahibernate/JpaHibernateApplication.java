@@ -38,6 +38,6 @@ public class JpaHibernateApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		employeeRepository.insertEmployee(new PartTimeEmployee("TestPartTimeEmployee", new BigDecimal("50")));
 		employeeRepository.insertEmployee(new FullTimeEmployee("TestFullTimeEmployee", new BigDecimal("10000")));
-		logger.info("All employees -> {}", employeeRepository.retrieveAllEmployee());
+		logger.info("FullTimeEmployee employees -> {}", employeeRepository.retrieveFullTimeEmployees());
 	}
 }

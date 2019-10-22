@@ -4,11 +4,17 @@ import javax.persistence.*;
 
 /**
  * Inheritance strategy
- * Def -> SINGLE_TABLE tüm alt classlar aynı tabloya kayıt olur
+ * Def -> SINGLE_TABLE -> tüm alt classlar aynı tabloya kayıt olur
+ * TABLE_PER_CLASS -> her class için tablo oluşturulur.
+ * JOINED -> abstract class dahil tüm classlar için tablo oluşturulur. Ortak fieldler abstract için oluşturulan tabloda
+ * diğer bilgiler kendi tablolarında tutulur.
+ * @MappedSuperclass -> Entity olamaz, queryde entity olmaması nedeniyle kullanılamaz. Bu şekilde yapıldığında alt
+ * classlar tam bağımsızn olarak oluşturulmaktadıKr.
  */
-@Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "EmployeeType")  // Tip kolonuna verilecek isim belirlenebilir.
+//@Entity
+//@Inheritance(strategy = InheritanceType.JOINED)
+@MappedSuperclass
+//@DiscriminatorColumn(name = "EmployeeType")  // Tip kolonuna verilecek isim belirlenebilir.
 public abstract class Employee {
     @Id
     @GeneratedValue
