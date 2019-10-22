@@ -26,7 +26,7 @@ public class Student {
      * Join Column ile tablodaki owner kolonunun ismini
      * Inverse Column ile diğer kolonun ismini belirliyoruz
      */
-    @ManyToMany
+    @ManyToMany  // Default fetch is lazy
     @JoinTable(name = "STUDENT_COURSE",
             joinColumns = @JoinColumn(name = "STUDENT_ID"),
             inverseJoinColumns = @JoinColumn(name = "COURSE_ID")
