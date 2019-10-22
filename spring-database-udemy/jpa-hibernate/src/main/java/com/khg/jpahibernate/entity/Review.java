@@ -15,7 +15,7 @@ public class Review {
     @Column(name = "description")
     private String description;
 
-    @ManyToOne
+    @ManyToOne  // Default fetch is eager
     private Course course;
 
     public Review() {}
