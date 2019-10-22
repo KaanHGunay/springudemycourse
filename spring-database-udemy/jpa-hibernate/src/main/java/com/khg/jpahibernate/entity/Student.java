@@ -5,6 +5,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "student")
@@ -18,6 +20,9 @@ public class Student {
 
     @OneToOne(fetch = FetchType.LAZY)  // Lazy Fetch yapılmak istenirse
     private Passport passport;
+
+    @ManyToMany
+    private List<Course> courses = new ArrayList<>();
 
     public Student() {}
 
@@ -43,6 +48,18 @@ public class Student {
 
     public void setPassport(Passport passport) {
         this.passport = passport;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void addCourse(Course course) {
+        this.courses.add(course);
+    }
+
+    public void removeCourse(Course course) {
+        this.courses.remove(course);
     }
 
     @Override

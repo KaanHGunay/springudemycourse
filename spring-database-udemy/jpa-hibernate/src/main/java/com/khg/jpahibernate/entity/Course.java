@@ -25,6 +25,9 @@ public class Course {
     @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)  // Default fetch is lazy
     private List<Review> reviews = new ArrayList<>();
 
+    @ManyToMany
+    private List<Student> students = new ArrayList<>();
+
     @UpdateTimestamp
     private LocalDateTime lastUpdatedDate;  // Java 8 den önce java.util.time kullanılıyor.
 
@@ -59,6 +62,14 @@ public class Course {
 
     public void removeReview(Review review) {
         this.reviews.remove(review);
+    }
+
+    public void addStudent(Student student) {
+        this.students.add(student);
+    }
+
+    public void removeCourse(Student student) {
+        this.students.remove(student);
     }
 
     @Override
