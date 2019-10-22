@@ -2,6 +2,7 @@ package com.khg.jpahibernate.repository;
 
 import com.khg.jpahibernate.JpaHibernateApplication;
 import com.khg.jpahibernate.entity.Course;
+import com.khg.jpahibernate.entity.Passport;
 import com.khg.jpahibernate.entity.Student;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,5 +42,13 @@ public class StudentRepositoryTest {
         Student student = entityManager.find(Student.class, 2001L);
         logger.info("Student -> {}", student);
         logger.info("Passport -> {}", student.getPassport());  // Her one to one relation eager fetch yapar
+    }
+
+    @Test
+    @Transactional
+    public void retrievePassportWithStudent() {
+        Passport passport = entityManager.find(Passport.class, 4001L);
+        logger.info("Passport -> {}", passport);
+        logger.info("Student -> {}", passport.getStudent());
     }
 }
