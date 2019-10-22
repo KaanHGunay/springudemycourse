@@ -6,13 +6,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 
+/**
+ * Transactional isolation transaction anında olabilecek veri bozulmaları için ayardır
+ * Burada her türlü sorunun SERIALIZABLE çözmektedeir ancak performans olarak yavaştır
+ * transaction anında tüm diğer transactionları durdurur bekletir. En kullanılan ise
+ * READ_COMMITTED hızlıdır sorun çıkma olasılığı mevcuttur ama az.
+ */
 @Repository
-@Transactional  // Data manipulation için gerekli
+@Transactional(isolation = Isolation.READ_COMMITTED)  // Data manipulation için gerekli
 public class CourseRepository {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
