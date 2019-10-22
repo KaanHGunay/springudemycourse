@@ -1,6 +1,7 @@
 package com.khg.jpahibernate.repository;
 
 import com.khg.jpahibernate.entity.Course;
+import com.khg.jpahibernate.entity.Review;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 @Transactional  // Data manipulation için gerekli
@@ -62,5 +64,13 @@ public class CourseRepository {
 
         course2.setName("Test Data 2- Updated");
         entityManager.flush();
+    }
+
+    public void addReviewsCourse(Course course, List<Review> reviews) {
+        for(Review review : reviews) {
+            course.addReview(review);
+            review.setCourse(course);
+            entityManager.persist(review);
+        }
     }
 }

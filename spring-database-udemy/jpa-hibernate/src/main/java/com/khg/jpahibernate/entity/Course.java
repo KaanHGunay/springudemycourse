@@ -53,11 +53,11 @@ public class Course {
         return reviews;
     }
 
-    public void addReviews(Review review) {
+    public void addReview(Review review) {
         this.reviews.add(review);
     }
 
-    public void removeReviews(Review review) {
+    public void removeReview(Review review) {
         this.reviews.remove(review);
     }
 
