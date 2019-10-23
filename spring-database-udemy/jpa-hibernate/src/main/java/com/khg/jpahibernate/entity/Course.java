@@ -15,6 +15,7 @@ import java.util.List;
         @NamedQuery(name = "query_get_all_courses", query = "select c from Course c"),
         @NamedQuery(name = "query_get_start_with_t", query = "Select c from Course c where name like 'T%'")
 })
+@Cacheable  // Second Level Active
 public class Course {
     @Id
     @GeneratedValue

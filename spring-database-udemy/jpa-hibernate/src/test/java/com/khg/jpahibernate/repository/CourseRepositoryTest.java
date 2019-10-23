@@ -36,10 +36,19 @@ public class CourseRepositoryTest {
     }
 
     @Test
+    @Transactional  // Transactional olmasa 1st level cached uygulanmayacktı. Aynı transaction da tüm işlemler yapıldığı için
+    public void findById_FirstLevelCache() {
+        Course course = courseRepository.findById(1001L);
+        assertEquals("Test2", course.getName());
+        Course course2 = courseRepository.findById(1001L);  // Aynı ver için tekrar sorgu gönderilmiyor. 1st level cached
+        assertEquals("Test2", course2.getName());
+    }
+
+    @Test
     @DirtiesContext  // Verileri test öncesi hale getir
     public void deleteById_Basic() {
-        courseRepository.deleteById(1000L);
-        assertNull(courseRepository.findById(1000L));
+        courseRepository.deleteById(1008L);
+        assertNull(courseRepository.findById(1008L));
     }
 
     @Test
