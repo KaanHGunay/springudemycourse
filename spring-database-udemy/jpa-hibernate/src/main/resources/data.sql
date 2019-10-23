@@ -4,6 +4,18 @@ insert into course(id, name, created_date, last_updated_date)
 values (1001, 'Test2', sysdate, sysdate);
 insert into course(id, name, created_date, last_updated_date)
 values (1002, 'Test3', sysdate, sysdate);
+insert into course(id, name, created_date, last_updated_date) 
+values(1003,'Spring Boot in 100 Steps', sysdate, sysdate);
+insert into course(id, name, created_date, last_updated_date) 
+values(1004,'Dummy1', sysdate, sysdate);
+insert into course(id, name, created_date, last_updated_date) 
+values(1005,'Dummy2', sysdate, sysdate);
+insert into course(id, name, created_date, last_updated_date) 
+values(1006,'Dummy3', sysdate, sysdate);
+insert into course(id, name, created_date, last_updated_date) 
+values(1007,'Dummy4', sysdate, sysdate);
+insert into course(id, name, created_date, last_updated_date) 
+values(1008,'Dummy5', sysdate, sysdate);
 
 insert into passport(id,number)
 values(4001,'E123456');
