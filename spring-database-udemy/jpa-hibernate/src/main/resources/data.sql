@@ -32,11 +32,11 @@ insert into student(id,name,passport_id)
 values(2003,'Jane',4003);
 
 insert into review(id,rating,description,course_id)
-values(5001,'5', 'Great Course',1000);
+values(5001,'FIVE', 'Great Course',1000);
 insert into review(id,rating,description,course_id)
-values(5002,'4', 'Wonderful Course',1000);
+values(5002,'FOUR', 'Wonderful Course',1000);
 insert into review(id,rating,description,course_id)
-values(5003,'5', 'Awesome Course',1002);
+values(5003,'FIVE', 'Awesome Course',1002);
 
 insert into student_course(student_id,course_id)
 values(2001,1001);
