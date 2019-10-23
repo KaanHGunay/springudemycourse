@@ -74,4 +74,9 @@ public class SpringDataRepositoryTest {
         Page<Course> secondPage = springDataRepository.findAll(secondPageable);
         logger.info("Second Page -> {} ", secondPage.getContent());
     }
+
+    @Test
+    public void findByName_Test() {
+        logger.info("Find By Name -> {}", springDataRepository.findByName("Test1"));
+    }
 }
