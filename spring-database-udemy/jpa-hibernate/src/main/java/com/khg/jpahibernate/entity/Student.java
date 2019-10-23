@@ -14,6 +14,9 @@ public class Student {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Embedded
+    private Address address;
+
     @OneToOne(fetch = FetchType.LAZY)  // Lazy Fetch yapılmak istenirse
     private Passport passport;
 
@@ -65,6 +68,14 @@ public class Student {
 
     public void removeCourse(Course course) {
         this.courses.remove(course);
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override

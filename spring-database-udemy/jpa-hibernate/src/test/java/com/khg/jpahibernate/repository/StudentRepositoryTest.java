@@ -1,6 +1,7 @@
 package com.khg.jpahibernate.repository;
 
 import com.khg.jpahibernate.JpaHibernateApplication;
+import com.khg.jpahibernate.entity.Address;
 import com.khg.jpahibernate.entity.Course;
 import com.khg.jpahibernate.entity.Passport;
 import com.khg.jpahibernate.entity.Student;
@@ -66,5 +67,15 @@ public class StudentRepositoryTest {
         Course course = entityManager.find(Course.class, 1001L);
         logger.info("Course -> {}", course);
         logger.info("Course's students -> {}", course.getStudents());
+    }
+
+    @Test
+    @Transactional
+    public void setAddress() {
+        Student student = entityManager.find(Student.class, 2001L);
+        student.setAddress(new Address("line1", "line2", "Ankara"));
+        entityManager.flush();
+        logger.info("Course -> {}", student);
+        logger.info("Course's students -> {}", student.getPassport());
     }
 }
