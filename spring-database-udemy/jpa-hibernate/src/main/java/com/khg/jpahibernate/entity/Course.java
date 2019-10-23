@@ -15,6 +15,7 @@ import java.util.List;
 @Table(name = "course")
 @NamedQueries(value = {
         @NamedQuery(name = "query_get_all_courses", query = "select c from Course c"),
+        @NamedQuery(name = "query_get_all_courses_join_fetch", query = "select c from Course c JOIN fetch c.students s"), // N+1 Problemi için
         @NamedQuery(name = "query_get_start_with_t", query = "Select c from Course c where name like 'T%'")
 })
 @Cacheable  // Second Level Active

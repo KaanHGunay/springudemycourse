@@ -13,7 +13,10 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityGraph;
 import javax.persistence.EntityManager;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -85,5 +88,38 @@ public class CourseRepositoryTest {
     public void retrieveCourseForReview() {
         Review review = entityManager.find(Review.class, 5001L);
         logger.info("5001L ID -> {}", review.getCourse());
+    }
+
+    /**
+     * N+1 Problemi
+     * Tüm kurslar sorgulandığında öğrenciler lazy fetch olduğu için dönmemekte
+     * For döngüsü her döndüğünde tekrar veri tabanı sorgusu oluşturark sorgu trafiği meydana gelmektedir
+     * Bunun önüne geçmek için Entity Graph Kullanılmaktadır.
+     */
+    @Test
+    @Transactional
+    public void nPlusOneProblem_EntityGraph() {
+        EntityGraph<Course> courseEntityGraph = entityManager.createEntityGraph(Course.class);
+        courseEntityGraph.addSubgraph("students");  // N+1 problemi oluşturacak alan
+        List<Course> courses = entityManager.createNamedQuery("query_get_all_courses", Course.class)
+                .setHint("javax.persistence.loadgraph", courseEntityGraph)
+                .getResultList();
+        for (Course course:courses) {
+            logger.info("Course -> {} and Students -> {}", course, course.getStudents());
+        }
+    }
+
+    /**
+     * N+1 Problemi - Çözüm 2
+     * Query Join Fetch ile oluşturulur.
+     */
+    @Test
+    @Transactional
+    public void nPlusOneProblem_JoinFetch() {
+        List<Course> courses = entityManager.createNamedQuery("query_get_all_courses_join_fetch", Course.class)
+                .getResultList();
+        for (Course course:courses) {
+            logger.info("Course -> {} and Students -> {}", course, course.getStudents());
+        }
     }
 }
