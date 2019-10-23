@@ -43,6 +43,11 @@ public class Course {
 
     private Boolean isDeleted;
 
+    @PreRemove
+    private void preRemove() {
+        isDeleted = true;  // Silinmeden önce aktif hale geldiğinden emin olmak için
+    }
+
     public Course() {}
 
     public Course(String name) {
