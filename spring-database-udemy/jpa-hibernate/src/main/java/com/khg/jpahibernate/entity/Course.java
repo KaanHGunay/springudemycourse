@@ -2,7 +2,9 @@ package com.khg.jpahibernate.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -16,6 +18,8 @@ import java.util.List;
         @NamedQuery(name = "query_get_start_with_t", query = "Select c from Course c where name like 'T%'")
 })
 @Cacheable  // Second Level Active
+@SQLDelete(sql = "update course set is_deleted=true where id=?")  // Soft delete işleminde uygulanacak sql
+@Where(clause = "is_deleted = false")  // Her sorguya eklenecek komut, siliniş ise getirme demek için
 public class Course {
     @Id
     @GeneratedValue
@@ -36,6 +40,8 @@ public class Course {
 
     @CreationTimestamp
     private LocalDateTime createdDate;
+
+    private Boolean isDeleted;
 
     public Course() {}
 
