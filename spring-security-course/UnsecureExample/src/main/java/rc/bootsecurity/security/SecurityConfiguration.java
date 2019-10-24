@@ -40,12 +40,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginProcessingUrl("/signin")
                 .loginPage("/login").permitAll()
-                .usernameParameter("txtUsername")
-                .passwordParameter("txtPassword")
+                .usernameParameter("txtUsername")  // Custom named - HTML tarafında Username şeklinde isimlendirilirse ihtiyaç yok
+                .passwordParameter("txtPassword") // Custom named - HTML tarafında Password şeklinde isimlendirilirse ihtiyaç yok
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login")
                 .and()
-                .rememberMe().tokenValiditySeconds(2592000).key("mySecret!").rememberMeParameter("checkRememberMe");
+                .rememberMe().tokenValiditySeconds(2592000).key("mySecret!")
+                .rememberMeParameter("checkRememberMe"); // Custom named - HTML tarafında RememberMe şeklinde isimlendirilirse ihtiyaç yok
     }
 
     @Bean
