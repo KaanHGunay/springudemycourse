@@ -16,11 +16,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()  // Geliştirme için in memory şeklinde çalış
-                .withUser("admin").password(passwordEncoder().encode("123")).roles("ADMIN")  // Admin ekle
+                .withUser("admin")
+                        .password(passwordEncoder()
+                        .encode("123"))
+                        .roles("ADMIN")  // Admin ekle
+                        .authorities("ACCESS_TEST1", "ACCESS_TEST2")
                 .and()
-                .withUser("Kaan").password(passwordEncoder().encode("1")).roles("USER")  // Kullanıcı ekle
+                .withUser("Kaan")
+                        .password(passwordEncoder()
+                        .encode("1"))
+                        .roles("USER")  // Kullanıcı ekle
                 .and()
-                .withUser("manager").password(passwordEncoder().encode("1")).roles("MANAGER");
+                .withUser("manager")
+                        .password(passwordEncoder().encode("1"))
+                        .roles("MANAGER")
+                        .authorities("ACCESS_TEST1");
     }
 
     /**
@@ -34,7 +44,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/profile/**").authenticated()  // Herkes kendi profiline girebilsin
                 .antMatchers("/admin/**").hasAnyRole("ADMIN")  // Admin altındaki her şeye erişim sadece admine
                 .antMatchers("/management/index").hasAnyRole("ADMIN", "MANAGER")
-                .antMatchers("/api/public/**").authenticated()
+                .antMatchers("/api/public/test1").hasAuthority("ACCESS_TEST1")
+                .antMatchers("/api/public/test2").hasAuthority("ACCESS_TEST2")
                 .and()
                 .httpBasic();
     }
