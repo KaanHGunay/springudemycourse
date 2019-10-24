@@ -34,6 +34,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/profile/**").authenticated()  // Herkes kendi profiline girebilsin
                 .antMatchers("/admin/**").hasAnyRole("ADMIN")  // Admin altındaki her şeye erişim sadece admine
                 .antMatchers("/management/index").hasAnyRole("ADMIN", "MANAGER")
+                .antMatchers("/api/public/**").authenticated()
                 .and()
                 .httpBasic();
     }
