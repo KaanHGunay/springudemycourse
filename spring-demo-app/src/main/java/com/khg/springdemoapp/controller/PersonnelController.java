@@ -13,8 +13,12 @@ import java.util.List;
 @RestController
 @RequestMapping("personnel")
 public class PersonnelController {
-    @Autowired
+    private final
     PersonnelService personnelService;
+
+    public PersonnelController(PersonnelService personnelService) {
+        this.personnelService = personnelService;
+    }
 
     @GetMapping("all-personnel")
     public List<Personnel> getAllPersonnel() {

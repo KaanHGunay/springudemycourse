@@ -12,12 +12,12 @@ public class testController {
     @GetMapping("test1")
     @ResponseBody
     public String test1() {
-        return "test worked";
+        return "test worked1";
     }
 
     @GetMapping("test2")
     @ResponseBody
     public String test2() {
-        return "test worked";
+        return "test worked2";
     }
 }

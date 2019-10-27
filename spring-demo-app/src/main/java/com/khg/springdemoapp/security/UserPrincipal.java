@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class UserPrincipal implements UserDetails {
-    private User user;
+class UserPrincipal implements UserDetails {
+    private final User user;
 
     UserPrincipal(User user){
         this.user = user;

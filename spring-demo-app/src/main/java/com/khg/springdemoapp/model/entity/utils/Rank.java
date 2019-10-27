@@ -13,9 +13,6 @@ public enum Rank {
     EMNIYET_MUDURU_2("2. Sınıf Emniyet Müdürü"),
     EMNIYET_MUDURU_1("1. Sınıf Emniyet Müdürü"),;
 
-    public final String rankName;
-
     Rank(String rankName) {
-        this.rankName = rankName;
     }
 }

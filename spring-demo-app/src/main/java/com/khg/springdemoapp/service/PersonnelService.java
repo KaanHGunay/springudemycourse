@@ -13,11 +13,15 @@ import java.util.List;
 @Service
 public class PersonnelService {
 
-    @Autowired
     private PersonnelRepository personnelRepository;
 
+    private final CityRepository cityRepository;
+
     @Autowired
-    private CityRepository cityRepository;
+    public PersonnelService(PersonnelRepository personnelRepository, CityRepository cityRepository) {
+        this.personnelRepository = personnelRepository;
+        this.cityRepository = cityRepository;
+    }
 
     public List<Personnel> getAllPersonnel() {
         return personnelRepository.findAll();
