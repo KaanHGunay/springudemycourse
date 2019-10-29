@@ -3,6 +3,7 @@ package com.khg.springdemoapp.controller;
 import com.khg.springdemoapp.model.dao.PersonnelDao;
 import com.khg.springdemoapp.model.entity.Personnel;
 import com.khg.springdemoapp.service.PersonnelService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.List;
 public class PersonnelController {
     private final PersonnelService personnelService;
 
+    @Autowired
     public PersonnelController(PersonnelService personnelService) {
         this.personnelService = personnelService;
     }
@@ -56,7 +58,7 @@ public class PersonnelController {
      * @return parametre olarak verilen isim soyisme sahip tüm personel listesi
      */
     @GetMapping("search-personnel")
-    public List<Personnel> getAllPersonnelForRank(@RequestParam String name, @RequestParam String surname) {
+    public List<Personnel> searchPersonnel(@RequestParam String name, @RequestParam String surname) {
         return personnelService.searchWithNameAndSurname(name, surname);
     }
 
