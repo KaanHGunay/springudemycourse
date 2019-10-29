@@ -1,8 +1,8 @@
 package com.khg.springdemoapp.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.khg.springdemoapp.model.entity.utils.Rank;
-import com.khg.springdemoapp.model.entity.utils.RankConverter;
+import com.khg.springdemoapp.model.entity.utils.Rutbe;
+import com.khg.springdemoapp.model.entity.utils.RutbeConverter;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -30,18 +30,18 @@ public @Data class Personnel {
     @JsonIgnore
     private City placeOfBirth;
 
-    @Convert(converter = RankConverter.class)
+    @Convert(converter = RutbeConverter.class)
     @Column(nullable = false)
-    private Rank rank;
+    private Rutbe rutbe;
 
     private Boolean isActive;
 
-    public Personnel(String batchNumber, String name, String surname, City placeOfBirth, Rank rank, Boolean isActive) {
+    public Personnel(String batchNumber, String name, String surname, City placeOfBirth, Rutbe rutbe, Boolean isActive) {
         this.batchNumber = batchNumber;
         this.name = name;
         this.surname = surname;
         this.placeOfBirth = placeOfBirth;
-        this.rank = rank;
+        this.rutbe = rutbe;
         this.isActive = isActive;
     }
 }

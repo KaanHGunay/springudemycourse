@@ -1,6 +1,6 @@
 package com.khg.springdemoapp.model.entity.utils;
 
-public enum Rank {
+public enum Rutbe {
     POLIS_MEMURU("Polis Memuru"),
     BASPOLIS_MEMURU("Başpolis Memuru"),
     KIDEMLI_BASPOLIS_MEMURU("Kıdemkli Başpolis Memuru"),
@@ -13,6 +13,6 @@ public enum Rank {
     EMNIYET_MUDURU_2("2. Sınıf Emniyet Müdürü"),
     EMNIYET_MUDURU_1("1. Sınıf Emniyet Müdürü"),;
 
-    Rank(String rankName) {
+    Rutbe(String rankName) {
     }
 }

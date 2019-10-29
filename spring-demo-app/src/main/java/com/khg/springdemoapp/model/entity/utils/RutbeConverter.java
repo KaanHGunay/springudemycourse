@@ -4,12 +4,12 @@ import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 
 @Converter
-public class RankConverter implements AttributeConverter<Rank, String> {
+public class RutbeConverter implements AttributeConverter<Rutbe, String> {
     @Override
-    public String convertToDatabaseColumn(Rank rank) {
-        if(rank == null) return null;
+    public String convertToDatabaseColumn(Rutbe rutbe) {
+        if(rutbe == null) return null;
 
-        switch (rank){
+        switch (rutbe){
             case POLIS_MEMURU:
                 return "Polis Memuru";
             case BASPOLIS_MEMURU:
@@ -33,35 +33,35 @@ public class RankConverter implements AttributeConverter<Rank, String> {
             case EMNIYET_MUDURU_1:
                 return "1. Sınıf Emniyet Müdürü";
             default:
-                throw new IllegalArgumentException(rank + " not supported.");
+                throw new IllegalArgumentException(rutbe + " not supported.");
         }
     }
 
     @Override
-    public Rank convertToEntityAttribute(String rank) {
+    public Rutbe convertToEntityAttribute(String rank) {
         switch (rank){
             case "Polis Memuru":
-                return Rank.POLIS_MEMURU;
+                return Rutbe.POLIS_MEMURU;
             case "Başpolis Memuru":
-                return Rank.BASPOLIS_MEMURU;
+                return Rutbe.BASPOLIS_MEMURU;
             case "Kıdemli Başpolis Memuru":
-                return Rank.KIDEMLI_BASPOLIS_MEMURU;
+                return Rutbe.KIDEMLI_BASPOLIS_MEMURU;
             case "Komiser Yardımcısı":
-                return Rank.KOMISER_YARDIMCISI;
+                return Rutbe.KOMISER_YARDIMCISI;
             case "Komiser":
-                return Rank.KOMISER;
+                return Rutbe.KOMISER;
             case "Başkomiser":
-                return Rank.BASKOMISER;
+                return Rutbe.BASKOMISER;
             case "Emniyet Amiri":
-                return Rank.EMNIYET_AMIRI;
+                return Rutbe.EMNIYET_AMIRI;
             case "4. Sınıf Emniyet Müdürü":
-                return Rank.EMNIYET_MUDURU_4;
+                return Rutbe.EMNIYET_MUDURU_4;
             case "3. Sınıf Emniyet Müdürü":
-                return Rank.EMNIYET_MUDURU_3;
+                return Rutbe.EMNIYET_MUDURU_3;
             case "2. Sınıf Emniyet Müdürü":
-                return Rank.EMNIYET_MUDURU_2;
+                return Rutbe.EMNIYET_MUDURU_2;
             case "1. Sınıf Emniyet Müdürü":
-                return Rank.EMNIYET_MUDURU_1;
+                return Rutbe.EMNIYET_MUDURU_1;
             default:
                 throw new IllegalArgumentException(rank + " not supported.");
         }

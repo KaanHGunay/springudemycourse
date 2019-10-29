@@ -1,12 +1,9 @@
 package com.khg.springdemoapp.controller;
 
+import com.khg.springdemoapp.model.dao.PersonnelDao;
 import com.khg.springdemoapp.model.entity.Personnel;
 import com.khg.springdemoapp.service.PersonnelService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,12 +28,22 @@ public class PersonnelController {
     }
 
     @GetMapping("all-personnel-rank")
-    public List<Personnel> getAllPersonnelForRank(@RequestParam String rank) {
-        return personnelService.getAllPersonnelForRank(rank);
+    public List<Personnel> getAllPersonnelForRank(@RequestParam String rutbe) {
+        return personnelService.getAllPersonnelForRank(rutbe);
     }
 
     @GetMapping("search-personnel")
     public List<Personnel> getAllPersonnelForRank(@RequestParam String name, @RequestParam String surname) {
         return personnelService.searchWithNameAndSurname(name, surname);
+    }
+
+    @PostMapping(value = "/add-personnel", consumes = "application/json", produces = "application/json")
+    public void addPersonnel(@RequestBody PersonnelDao personnel) {
+        personnelService.addPersonnel(personnel);
+    }
+
+    @PostMapping(value = "/update-personnel", consumes = "application/json", produces = "application/json")
+    public void updatePersonnel(@RequestBody PersonnelDao personnel) {
+        personnelService.updatePersonnel(personnel);
     }
 }
