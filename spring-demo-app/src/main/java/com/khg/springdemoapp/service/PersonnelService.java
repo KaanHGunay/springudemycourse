@@ -10,20 +10,16 @@ import com.khg.springdemoapp.model.repository.PersonnelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 
 @Service
 public class PersonnelService {
 
-    private PersonnelRepository personnelRepository;
+    private final PersonnelRepository personnelRepository;
 
     private final CityRepository cityRepository;
 
-    private PersonnelConverter personnelConverter;
-
-    @Autowired
-    private EntityManager entityManager;
+    private final PersonnelConverter personnelConverter;
 
     @Autowired
     public PersonnelService(PersonnelRepository personnelRepository, CityRepository cityRepository, PersonnelConverter personnelConverter) {

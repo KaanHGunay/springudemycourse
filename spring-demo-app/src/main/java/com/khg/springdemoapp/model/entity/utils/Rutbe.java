@@ -1,5 +1,8 @@
 package com.khg.springdemoapp.model.entity.utils;
 
+/**
+ * Personelin sahip olabileceği rütbeleri temsil eder
+ */
 public enum Rutbe {
     POLIS_MEMURU("Polis Memuru"),
     BASPOLIS_MEMURU("Başpolis Memuru"),

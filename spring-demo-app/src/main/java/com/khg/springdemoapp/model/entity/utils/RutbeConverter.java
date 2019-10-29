@@ -1,12 +1,23 @@
 package com.khg.springdemoapp.model.entity.utils;
 
+import org.springframework.lang.NonNull;
+
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 
+/**
+ * Personelin sahip olduğu rütbelerin veri tabanına kayıt esnasında formatlanması
+ */
 @Converter
 public class RutbeConverter implements AttributeConverter<Rutbe, String> {
+
+    /**
+     * Rutbenin veri tabanına uygun formata getirilmesi
+     * @param rutbe Dönüştürülmek istenen rütbe
+     * @return Rütbenin veri tabanına uygun hale dönüştürülmüş hali
+     */
     @Override
-    public String convertToDatabaseColumn(Rutbe rutbe) {
+    public String convertToDatabaseColumn(@NonNull Rutbe rutbe) {
         if(rutbe == null) return null;
 
         switch (rutbe){
@@ -37,8 +48,13 @@ public class RutbeConverter implements AttributeConverter<Rutbe, String> {
         }
     }
 
+    /**
+     * Veri tabanından alınan rütbenin enum a uygun formata getirilmesi
+     * @param rank Enuma dönüştürülmesi istenen rütbenin string hali
+     * @return Enuma dönüştürülmüş hali
+     */
     @Override
-    public Rutbe convertToEntityAttribute(String rank) {
+    public Rutbe convertToEntityAttribute(@NonNull String rank) {
         switch (rank){
             case "Polis Memuru":
                 return Rutbe.POLIS_MEMURU;

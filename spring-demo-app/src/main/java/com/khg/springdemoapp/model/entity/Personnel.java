@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/**
+ * Personelin bilgileri tutulan class
+ */
 @Entity
 @Table(name = "personnel")
 @NoArgsConstructor
@@ -17,6 +20,9 @@ public @Data class Personnel {
     @GeneratedValue
     private Long id;
 
+    /**
+     * Personelin sicil bilgisi
+     */
     @Column(nullable = false)
     private String batchNumber;
 

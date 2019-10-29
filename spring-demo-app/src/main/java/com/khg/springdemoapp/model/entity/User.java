@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Yazılımın kullanılarını tutan class
+ */
 @Entity
 @NoArgsConstructor
 public @Data class User {

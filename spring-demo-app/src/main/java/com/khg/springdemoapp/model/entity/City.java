@@ -5,6 +5,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/**
+ * Personelin kayıt esnasında doğum yeri olarak tutulan şehir classı
+ */
 @Entity
 @Table(name = "city")
 @Cacheable
