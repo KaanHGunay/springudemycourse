@@ -42,7 +42,7 @@ public class PersonnelController {
         personnelService.addPersonnel(personnel);
     }
 
-    @PostMapping(value = "/update-personnel", consumes = "application/json", produces = "application/json")
+    @PutMapping(value = "/update-personnel", consumes = "application/json", produces = "application/json")
     public void updatePersonnel(@RequestBody PersonnelDao personnel) {
         personnelService.updatePersonnel(personnel);
     }

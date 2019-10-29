@@ -2,6 +2,7 @@ package com.khg.springdemoapp.model.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public @Data class User {
     @Column(nullable = false)
     private String password;
 
-    private int active;
+    private Boolean active;
 
     private String roles = "";
 
@@ -32,7 +33,7 @@ public @Data class User {
         this.password = password;
         this.roles = roles;
         this.permissions = permissions;
-        this.active = 1;
+        this.active = true;
     }
 
     public List<String> getRoleList(){
@@ -47,5 +48,10 @@ public @Data class User {
             return Arrays.asList(this.permissions.split(","));
         }
         return new ArrayList<>();
+    }
+
+    public void setPasswordWithBCrypt(String password) {
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        this.password = bCryptPasswordEncoder.encode(password);
     }
 }
