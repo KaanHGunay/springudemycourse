@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88b0f46f-6c9d-4d91-b47e-3bdba760d633" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/39ef9ff9-4b1d-45cb-8c6d-fec47c11c80e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/39ef9ff9-4b1d-45cb-8c6d-fec47c11c80e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_18.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_envers_5_4_6_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/model/entity/AuditLog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/model/entity/Personnel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/model/entity/Personnel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/security/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,7 +145,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PersonnelControllerTest">
+  <component name="RunManager" selected="JUnit.PersonnelControllerTest.addPersonnel">
     <configuration name="PersonnelControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-demo-app" />
       <extension name="coverage">
@@ -252,8 +253,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersonnelControllerTest" />
         <item itemvalue="JUnit.PersonnelControllerTest.addPersonnel" />
+        <item itemvalue="JUnit.PersonnelControllerTest" />
         <item itemvalue="JUnit.RutbeConverterTest" />
         <item itemvalue="JUnit.PersonnelControllerTest.updatePersonnel" />
         <item itemvalue="JUnit.PersonnelControllerTest.getAllPersonnelForACity" />
@@ -299,7 +300,7 @@
       <workItem from="1572332882496" duration="23388000" />
       <workItem from="1572455679420" duration="92000" />
       <workItem from="1572455994017" duration="4772000" />
-      <workItem from="1572504358074" duration="2774000" />
+      <workItem from="1572504358074" duration="7647000" />
     </task>
     <task id="LOCAL-00001" summary="Inspect Code">
       <created>1572210008238</created>
@@ -357,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572460150756</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added Build Profile">
+      <created>1572508763531</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1572508763531</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,6 +393,7 @@
     <MESSAGE value="Create Test" />
     <MESSAGE value="Converter Test" />
     <MESSAGE value="Added Prod and Dev Profiles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Prod and Dev Profiles" />
+    <MESSAGE value="Added Build Profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Build Profile" />
   </component>
 </project>

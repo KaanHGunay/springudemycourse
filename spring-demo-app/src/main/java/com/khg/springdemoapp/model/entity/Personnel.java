@@ -5,6 +5,8 @@ import com.khg.springdemoapp.model.entity.utils.Rutbe;
 import com.khg.springdemoapp.model.entity.utils.RutbeConverter;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 
 import javax.persistence.*;
 
@@ -14,6 +16,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "personnel")
 @NoArgsConstructor
+@Audited
 public @Data class Personnel {
 
     @Id
@@ -34,6 +37,7 @@ public @Data class Personnel {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JsonIgnore
+    @NotAudited
     private City placeOfBirth;
 
     @Convert(converter = RutbeConverter.class)
@@ -41,6 +45,8 @@ public @Data class Personnel {
     private Rutbe rutbe;
 
     private Boolean isActive;
+
+    private AuditLog auditLog = new AuditLog();
 
     public Personnel(String batchNumber, String name, String surname, City placeOfBirth, Rutbe rutbe, Boolean isActive) {
         this.batchNumber = batchNumber;
