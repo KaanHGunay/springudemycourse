@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88b0f46f-6c9d-4d91-b47e-3bdba760d633" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_envers_5_4_6_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/model/entity/AuditLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/spring_demo_app_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/spring_demo_app_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/378644.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/test-data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/SpringDemoAppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/SpringDemoAppApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/model/entity/Personnel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/model/entity/Personnel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/security/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/khg/springdemoapp/security/SecurityConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/khg/springdemoapp/controller/PersonnelControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/khg/springdemoapp/controller/PersonnelControllerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +151,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PersonnelControllerTest.addPersonnel">
+  <component name="RunManager" selected="Spring Boot.Dev">
     <configuration name="PersonnelControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-demo-app" />
       <extension name="coverage">
@@ -177,7 +183,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonnelControllerTest.getAllPersonnelForACity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PersonnelControllerTest.getAllPersonnel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-demo-app" />
       <extension name="coverage">
         <pattern>
@@ -187,7 +193,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.khg.springdemoapp.controller" />
       <option name="MAIN_CLASS_NAME" value="com.khg.springdemoapp.controller.PersonnelControllerTest" />
-      <option name="METHOD_NAME" value="getAllPersonnelForACity" />
+      <option name="METHOD_NAME" value="getAllPersonnel" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersonnelControllerTest.searchPersonnel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-demo-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.khg.springdemoapp.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.khg.springdemoapp.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.khg.springdemoapp.controller.PersonnelControllerTest" />
+      <option name="METHOD_NAME" value="searchPersonnel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -209,26 +231,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RutbeConverterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-demo-app" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.khg.springdemoapp.model.entity.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.khg.springdemoapp.model.entity.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.khg.springdemoapp.model.entity.utils.RutbeConverterTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Dev" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring-demo-app" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.khg.springdemoapp.SpringDemoAppApplication" />
       <option name="ACTIVE_PROFILES" value="DEV" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <additionalParameters>
+        <param>
+          <option name="enabled" value="true" />
+          <option name="name" value="spring.h2.console.enabled" />
+          <option name="value" value="true" />
+        </param>
+      </additionalParameters>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -243,21 +257,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PersonnelControllerTest" />
+      <item itemvalue="JUnit.PersonnelControllerTest.searchPersonnel" />
       <item itemvalue="JUnit.PersonnelControllerTest.addPersonnel" />
-      <item itemvalue="JUnit.PersonnelControllerTest.getAllPersonnelForACity" />
       <item itemvalue="JUnit.PersonnelControllerTest.updatePersonnel" />
-      <item itemvalue="JUnit.RutbeConverterTest" />
+      <item itemvalue="JUnit.PersonnelControllerTest" />
+      <item itemvalue="JUnit.PersonnelControllerTest.getAllPersonnel" />
       <item itemvalue="Spring Boot.Dev" />
       <item itemvalue="Spring Boot.Prod" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersonnelControllerTest.addPersonnel" />
+        <item itemvalue="JUnit.PersonnelControllerTest.getAllPersonnel" />
         <item itemvalue="JUnit.PersonnelControllerTest" />
-        <item itemvalue="JUnit.RutbeConverterTest" />
         <item itemvalue="JUnit.PersonnelControllerTest.updatePersonnel" />
-        <item itemvalue="JUnit.PersonnelControllerTest.getAllPersonnelForACity" />
+        <item itemvalue="JUnit.PersonnelControllerTest.addPersonnel" />
+        <item itemvalue="JUnit.PersonnelControllerTest.searchPersonnel" />
       </list>
     </recent_temporary>
   </component>
@@ -274,7 +288,7 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@523f8f6e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@90385258" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b321c6b0" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -300,7 +314,7 @@
       <workItem from="1572332882496" duration="23388000" />
       <workItem from="1572455679420" duration="92000" />
       <workItem from="1572455994017" duration="4772000" />
-      <workItem from="1572504358074" duration="7647000" />
+      <workItem from="1572504358074" duration="20552000" />
     </task>
     <task id="LOCAL-00001" summary="Inspect Code">
       <created>1572210008238</created>
@@ -365,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572508763531</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Audit Tables">
+      <created>1572515656975</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572515656975</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,6 +415,7 @@
     <MESSAGE value="Converter Test" />
     <MESSAGE value="Added Prod and Dev Profiles" />
     <MESSAGE value="Added Build Profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Build Profile" />
+    <MESSAGE value="Added Audit Tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Audit Tables" />
   </component>
 </project>

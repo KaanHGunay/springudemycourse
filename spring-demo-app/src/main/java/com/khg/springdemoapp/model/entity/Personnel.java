@@ -46,6 +46,7 @@ public @Data class Personnel {
 
     private Boolean isActive;
 
+    @JsonIgnore
     private AuditLog auditLog = new AuditLog();
 
     public Personnel(String batchNumber, String name, String surname, City placeOfBirth, Rutbe rutbe, Boolean isActive) {
