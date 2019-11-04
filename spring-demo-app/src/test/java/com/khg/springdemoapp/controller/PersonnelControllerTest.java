@@ -24,7 +24,7 @@ import static org.junit.Assert.assertEquals;
 @Sql(scripts = "/test-data.sql")
 public class PersonnelControllerTest {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private TestRestTemplate template;

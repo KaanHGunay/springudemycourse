@@ -21,20 +21,24 @@ import java.util.List;
 @Profile(Profiles.DEV)
 public class DbInit implements CommandLineRunner {
 
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+
+    private final PasswordEncoder passwordEncoder;
+
+    private final CityRepository cityRepository;
+
+    private final PersonnelRepository personnelRepository;
 
     @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private CityRepository cityRepository;
-
-    @Autowired
-    private PersonnelRepository personnelRepository;
+    public DbInit(UserRepository userRepository, PasswordEncoder passwordEncoder, CityRepository cityRepository, PersonnelRepository personnelRepository) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.cityRepository = cityRepository;
+        this.personnelRepository = personnelRepository;
+    }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         // Adding cities
         City city1 = new City("Bursa");
         City city2 = new City("Ankara");
