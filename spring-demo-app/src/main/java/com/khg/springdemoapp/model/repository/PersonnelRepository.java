@@ -33,4 +33,6 @@ public interface PersonnelRepository extends JpaRepository<Personnel, Integer> {
      * @return Parametre olarak verilen rütbeye sahip tüm personel
      */
     List<Personnel> findByRutbe(Rutbe rutbe);
+
+    void deleteById(Long id);
 }

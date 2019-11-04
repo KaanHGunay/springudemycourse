@@ -94,4 +94,13 @@ public class PersonnelController {
         logger.info("Personnel who has {} batch number updated by {}", personnel.getBatchNumber(), currentUser.getAuthentication().getName());
         personnelService.updatePersonnel(personnel);
     }
+
+    /**
+     * Personelin silinmesi
+     */
+    @DeleteMapping(value = "/delete-personnel")
+    public void deletePersonnel(@RequestParam Long id) {
+        logger.info("Deleted personnel who has {} id number by {}", id, currentUser.getAuthentication().getName());
+        personnelService.deletePersonnel(id);
+    }
 }

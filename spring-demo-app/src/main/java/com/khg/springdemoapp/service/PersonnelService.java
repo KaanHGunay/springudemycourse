@@ -55,4 +55,8 @@ public class PersonnelService {
         Personnel personnel = personnelConverter.convertFromDaoToPersonnel(personnelDao);
         personnelRepository.save(personnel);
     }
+
+    public void deletePersonnel(Long id) {
+        personnelRepository.deleteById(id);
+    }
 }
